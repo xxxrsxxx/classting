@@ -5,7 +5,7 @@ import NoteList, { role } from "./NoteList";
 describe("Note List Ui Test", () => {
   let dummy = [
     {
-      index: 1,
+      id: 1,
       content: "Jean Harlow",
       value: false,
       answer: "Fay Wray",
@@ -13,7 +13,7 @@ describe("Note List Ui Test", () => {
         "Who played the female lead in the 1933 film &quot;King Kong&quot;?",
     },
     {
-      index: 2,
+      id: 2,
       content: "Automated Database",
       value: false,
       answer: "Active Directory",
@@ -21,7 +21,7 @@ describe("Note List Ui Test", () => {
         "What does AD stand for in relation to Windows Operating Systems? ",
     },
     {
-      index: 1,
+      id: 1,
       content: "Hephaestus",
       value: false,
       answer: "Dionysus",

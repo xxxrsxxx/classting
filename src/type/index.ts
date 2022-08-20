@@ -29,6 +29,6 @@ export interface ItemProps {
   answer: string;
   content: string;
   question: string;
-  index: number;
+  id: number;
   value: boolean;
 }

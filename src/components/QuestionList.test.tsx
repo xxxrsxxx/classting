@@ -6,7 +6,7 @@ import QuestionList, { role } from "./QuestionList";
 const dummy = {
   items: [
     {
-      index: 0,
+      id: 0,
       content: "Badger",
       value: true,
       answer: "Badger",
@@ -14,7 +14,7 @@ const dummy = {
         "In the Beatrix Potter books, what type of animal is Tommy Brock?",
     },
     {
-      index: 1,
+      id: 1,
       content: "Fox",
       value: false,
       answer: "Badger",
@@ -22,7 +22,7 @@ const dummy = {
         "In the Beatrix Potter books, what type of animal is Tommy Brock?",
     },
     {
-      index: 2,
+      id: 2,
       content: "Frog",
       value: false,
       answer: "Badger",
@@ -30,7 +30,7 @@ const dummy = {
         "In the Beatrix Potter books, what type of animal is Tommy Brock?",
     },
     {
-      index: 3,
+      id: 3,
       content: "Rabbit",
       value: false,
       answer: "Badger",

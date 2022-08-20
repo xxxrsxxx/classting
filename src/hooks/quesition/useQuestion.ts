@@ -55,7 +55,7 @@ const useQuestion = ({ data }: Props) => {
     [status]
   );
 
-  const nextQuestion = useCallback(() => {
+  const nextQuestionHandler = useCallback(() => {
     if (step === question.answerItems.length) {
       dispatch(setTimeAction({ type: "end", time: moment() }));
       navigate(`/result`);
@@ -76,7 +76,7 @@ const useQuestion = ({ data }: Props) => {
     status,
     question,
     selectedHandler,
-    nextQuestion,
+    nextQuestionHandler,
   };
 };
 

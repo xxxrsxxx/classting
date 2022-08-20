@@ -22,7 +22,7 @@ const QuestionListContainer = ({ data }: Props) => {
     },
   };
   const { dispatch } = useQuestionStore();
-  const { step, status, question, selectedHandler, nextQuestion } =
+  const { step, status, question, selectedHandler, nextQuestionHandler } =
     useQuestion(dummy);
 
   useEffect(() => {
@@ -47,7 +47,7 @@ const QuestionListContainer = ({ data }: Props) => {
                 <Button
                   variant="contained"
                   color="primary"
-                  onClick={nextQuestion}
+                  onClick={nextQuestionHandler}
                 >
                   next
                 </Button>
