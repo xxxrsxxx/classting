@@ -26,7 +26,7 @@ const ResultContainer = () => {
         >
           ConsumedTime: {getConsumedTime()}
         </Typography>
-        <Link to="/">Go Home</Link>
+        <Link to="/">Re Start</Link>
 
         <Stack direction="row" spacing={2}>
           <Paper sx={{ padding: "5px" }}>total: {questionTotal}</Paper>
@@ -36,7 +36,7 @@ const ResultContainer = () => {
 
         {wrongItems.length > 0 && (
           <>
-            <Title> wrong answer note</Title>
+            <Title> Wrong Answer Note</Title>
             <NoteList items={wrongItems} />
           </>
         )}
