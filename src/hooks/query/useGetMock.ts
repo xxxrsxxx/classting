@@ -53,7 +53,15 @@ const useGetMock = () => {
   };
   return useQuery(
     ["api"],
-    () => parseData($_get("api.php?amount=5&type=multiple")),
+    () =>
+      parseData(
+        $_get("api.php", {
+          params: {
+            amount: 5,
+            type: "multiple",
+          },
+        })
+      ),
     { suspense: false }
   );
 };

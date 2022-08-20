@@ -27,11 +27,6 @@ const queryClient = new QueryClient({
   defaultOptions: {
     queries: { staleTime: Infinity },
   },
-  logger: {
-    log: console.log,
-    warn: console.warn,
-    error: process.env.NODE_ENV === "test" ? () => {} : console.error,
-  },
 });
 
 if (process.env.NODE_ENV === "development") {

@@ -14,7 +14,7 @@ const ResultContainer = () => {
   } = useQuestionStore();
 
   const { getConsumedTime } = useConsumedTime();
-  console.log("wrongItems", wrongItems);
+
   return (
     <>
       <ContainerLayout>
