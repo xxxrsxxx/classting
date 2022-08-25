@@ -1,4 +1,3 @@
-# CLASSTING 사전 과제
 
 ##  작업 URL 참조 
 
