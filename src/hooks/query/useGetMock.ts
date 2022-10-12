@@ -46,7 +46,6 @@ const parseData = async (data: any) => {
       };
     }
   );
-
   return {
     items,
   };

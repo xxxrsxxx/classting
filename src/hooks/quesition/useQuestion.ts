@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ItemProps, ListProps, StatusProps } from "@src/type";
+import { ItemProps, QuestionItemProps, StatusProps } from "@src/type";
 
 import {
   setTimeAction,
@@ -9,13 +9,7 @@ import {
 } from "@src/store/classting/question";
 import moment from "moment";
 
-interface Props {
-  data: {
-    items: Array<ListProps>;
-  };
-}
-
-const useQuestion = ({ data }: Props) => {
+const useQuestion = (items: QuestionItemProps[]) => {
   let navigate = useNavigate();
   const { dispatch } = useQuestionStore();
   const init = {
@@ -30,8 +24,8 @@ const useQuestion = ({ data }: Props) => {
   });
 
   const question = useMemo(() => {
-    return data.items[step];
-  }, [data.items, step]);
+    return items[step];
+  }, [items, step]);
 
   const selectedHandler = useCallback(
     (item: ItemProps) => {
@@ -54,7 +48,6 @@ const useQuestion = ({ data }: Props) => {
     },
     [status]
   );
-
   const nextQuestionHandler = useCallback(() => {
     if (step === question.answerItems.length) {
       dispatch(setTimeAction({ type: "end", time: moment() }));

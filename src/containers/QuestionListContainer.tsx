@@ -2,28 +2,16 @@ import React, { memo, useEffect } from "react";
 import styled from "styled-components";
 import { Button, Typography } from "@mui/material";
 import moment from "moment";
-import { ListProps } from "@src/type";
+import { QuestionItemProps } from "@src/type";
 import { fontColor } from "@src/constants";
 import { useQuestion } from "@src/hooks";
 import { useQuestionStore, setTimeAction } from "@src/store/classting/question";
 import QuestionList from "@src/components/QuestionList";
 
-interface Props {
-  data?: {
-    items: Array<ListProps>;
-  };
-}
-
-const QuestionListContainer = ({ data }: Props) => {
-  const dummy = {
-    data: {
-      items: [],
-      ...data,
-    },
-  };
+const QuestionListContainer = ({ items }: { items: QuestionItemProps[] }) => {
   const { dispatch } = useQuestionStore();
   const { step, status, question, selectedHandler, nextQuestionHandler } =
-    useQuestion(dummy);
+    useQuestion(items);
 
   useEffect(() => {
     dispatch(setTimeAction({ type: "start", time: moment() }));

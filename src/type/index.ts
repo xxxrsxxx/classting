@@ -3,6 +3,7 @@ export interface QuestionItemProps {
   difficulty: string;
   question: string;
   answerList?: Array<ItemProps>;
+  answerItems: Array<ItemProps>;
 }
 
 export interface StatusProps {
@@ -13,14 +14,14 @@ export interface StatusProps {
 }
 
 export interface QuestionListProps {
-  items: Array<ItemProps>;
+  items?: Array<ItemProps>;
   status: StatusProps;
   selectedHandler: (e: ItemProps) => void;
 }
 
 export interface ListProps {
   id: string;
-  answerItems: [];
+  answerItems: ItemProps[];
   difficulty: "string";
   question: "string";
 }
