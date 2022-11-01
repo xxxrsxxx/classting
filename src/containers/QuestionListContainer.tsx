@@ -5,17 +5,17 @@ import moment from "moment";
 import { QuestionItemProps } from "@src/type";
 import { fontColor } from "@src/constants";
 import { useQuestion } from "@src/hooks";
-import { useQuestionStore, setTimeAction } from "@src/store/classting/question";
+import { useQuestionStore } from "@src/store/classting/question";
 import QuestionList from "@src/components/QuestionList";
 
 const QuestionListContainer = ({ items }: { items: QuestionItemProps[] }) => {
-  const { dispatch } = useQuestionStore();
+  const { setTimeAction } = useQuestionStore();
   const { step, status, question, selectedHandler, nextQuestionHandler } =
     useQuestion(items);
 
   useEffect(() => {
-    dispatch(setTimeAction({ type: "start", time: moment() }));
-  }, [dispatch]);
+    setTimeAction({ type: "start", time: moment() });
+  }, [setTimeAction]);
 
   return (
     <ContainerLayout>

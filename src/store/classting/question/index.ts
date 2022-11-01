@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { createSlice } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import type { RootState, AppDispatch } from "../../index";
@@ -64,7 +65,6 @@ export const questionSlice = createSlice({
 export const { setTimeAction, setStatusAction } = questionSlice.actions;
 
 export function useQuestionStore() {
-  // The `state` arg is correctly typed as `RootState` already
   const questionState = useAppSelector(
     (state: RootState) => state.classting.question
   );
@@ -72,7 +72,19 @@ export function useQuestionStore() {
 
   return {
     questionState,
-    dispatch,
+    setTimeAction: useCallback(
+      (payload: { type: string; time: Moment }) =>
+        dispatch(setTimeAction(payload)),
+      [dispatch]
+    ),
+    setStatusAction: useCallback(
+      (payload: {
+        wrongItems: ItemProps[];
+        answerCount: number;
+        questionTotal: number;
+      }) => dispatch(setStatusAction(payload)),
+      [dispatch]
+    ),
   };
 }
 
